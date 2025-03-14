@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="300" height="300" viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background circle -->
+  <circle cx="150" cy="150" r="120" fill="url(#gradient)" opacity="0.1"/>
+  
+  <!-- Lightbulb base -->
+  <path d="M150 80 L150 220" stroke="#33CD9E" stroke-width="4" stroke-linecap="round"/>
+  
+  <!-- Lightbulb glass -->
+  <path d="M120 140 Q150 80 180 140" stroke="#33CD9E" stroke-width="4" fill="none"/>
+  
+  <!-- Ideas/sparks -->
+  <circle cx="150" cy="100" r="3" fill="#C45DFF"/>
+  <circle cx="170" cy="110" r="3" fill="#C45DFF"/>
+  <circle cx="130" cy="110" r="3" fill="#C45DFF"/>
+  
+  <!-- Sprint arrows -->
+  <path d="M100 180 L200 180" stroke="#33CD9E" stroke-width="4" stroke-linecap="round"/>
+  <path d="M190 170 L200 180 L190 190" stroke="#33CD9E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  
+  <!-- Gradient definition -->
+  <defs>
+    <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#C45DFF"/>
+      <stop offset="100%" style="stop-color:#33CD9E"/>
+    </linearGradient>
+  </defs>
+</svg> 

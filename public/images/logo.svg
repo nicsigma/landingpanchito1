@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="200" height="100" viewBox="0 0 200 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Patagonian mountain outline with snow cap -->
+  <path 
+    d="M100 20 L160 75 L40 75 Z" 
+    stroke="#FFFFFF" 
+    stroke-width="2" 
+    fill="none"
+  />
+  <path 
+    d="M90 30 C90 30, 100 20, 110 30" 
+    stroke="#FFFFFF" 
+    stroke-width="2" 
+    fill="#FFFFFF"
+  />
+  
+  <!-- Three curved golden lines representing the mountain base -->
+  <path 
+    d="M30 80 Q100 65 170 80" 
+    stroke="url(#goldenGradient)" 
+    stroke-width="3" 
+    fill="none"
+  />
+  <path 
+    d="M25 87 Q100 72 175 87" 
+    stroke="url(#goldenGradient)" 
+    stroke-width="3" 
+    fill="none"
+  />
+  <path 
+    d="M20 94 Q100 79 180 94" 
+    stroke="url(#goldenGradient)" 
+    stroke-width="3" 
+    fill="none"
+  />
+  
+  <!-- Golden gradient definition -->
+  <defs>
+    <linearGradient id="goldenGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#B3935C"/>
+      <stop offset="50%" style="stop-color:#D4AF37"/>
+      <stop offset="100%" style="stop-color:#B3935C"/>
+    </linearGradient>
+  </defs>
+</svg> 

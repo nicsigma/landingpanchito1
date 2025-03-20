@@ -6,25 +6,25 @@ const teamMembers = [
   {
     name: "Greta Gawianski",
     role: "Innovation consulting, Climate Tech & Blockchain",
-    image: "/lovable-uploads/ad873582-6fdb-4d1a-95af-92fbfe7a0973.png",
+    image: "/images/team/greta.jpg",
     linkedin: "https://www.linkedin.com/in/gretagawi/"
   },
   {
     name: "Nicole Sigmaringo",
     role: "UX & Product Strategist",
-    image: "/lovable-uploads/454f38ba-18d4-49c5-9f85-505acd02ada2.png",
+    image: "/images/team/nicole.jpg",
     linkedin: "https://www.linkedin.com/in/nicole-sigmaringo-205a4130/"
   },
   {
     name: "Ariel Mathov",
     role: "Entrepreneur & AI No Code Specialist",
-    image: "/lovable-uploads/cece3888-07b7-4616-954a-1e9eed8b6dc6.png",
+    image: "/images/team/ariel.jpg",
     linkedin: "https://www.linkedin.com/in/arielmathov/"
   },
   {
     name: "Oswaldo Rivas",
     role: "Senior Product Manager & Business Specialist",
-    image: "/lovable-uploads/5d767c0b-bc68-4220-9120-ba926b566220.png",
+    image: "/images/team/oswaldo.jpg",
     linkedin: "https://www.linkedin.com/in/oswaldo-rivas/"
   }
 ];

@@ -1,4 +1,3 @@
-
 import { Mountain, Cpu, Leaf, Briefcase, Users } from "lucide-react";
 import AnimatedSection from "./AnimatedSection";
 import TeamMember from "./TeamMember";
@@ -12,22 +11,22 @@ export default function AboutSection() {
     {
       name: "Greta Gawianski",
       role: language === 'en' ? "Innovation consulting, Climate Tech & Blockchain" : "Consultoría en innovación, Climate Tech & Blockchain",
-      photo: "/lovable-uploads/ad873582-6fdb-4d1a-95af-92fbfe7a0973.png"
+      photo: "/images/team/greta.jpg"
     },
     {
       name: "Nicole Sigmaringo",
       role: "UX & Business Design",
-      photo: "/lovable-uploads/454f38ba-18d4-49c5-9f85-505acd02ada2.png"
+      photo: "/images/team/nicole.jpg"
     },
     {
       name: "Ariel Mathov",
       role: "Entrepreneur & AI No Code Specialist",
-      photo: "/lovable-uploads/cece3888-07b7-4616-954a-1e9eed8b6dc6.png"
+      photo: "/images/team/ariel.jpg"
     },
     {
       name: "Oswaldo Rivas",
       role: language === 'en' ? "Senior Product Manager & Business Specialist" : "Senior Product Manager & Business Specialist",
-      photo: "/lovable-uploads/5d767c0b-bc68-4220-9120-ba926b566220.png"
+      photo: "/images/team/oswaldo.jpg"
     }
   ];
 

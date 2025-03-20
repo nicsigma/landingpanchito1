@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { useLanguage } from "@/context/LanguageContext";
 import AnimatedSection from "./AnimatedSection";
+import { useState } from "react";
 
 const services = [
   {
@@ -37,6 +38,7 @@ const services = [
 
 export default function ServicesSection() {
   const { language } = useLanguage();
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   
   return (
     <section id="services" className="relative min-h-screen py-24 solid-bg-section">
@@ -76,7 +78,7 @@ export default function ServicesSection() {
                 animation={index === 0 ? "fade-in" : index === 1 ? "fade-in-delay-1" : "fade-in-delay-2"}
               >
                 <motion.div 
-                  className="service-card rounded-xl p-8 h-full"
+                  className="service-card rounded-xl p-8 h-full cursor-pointer"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
@@ -85,6 +87,8 @@ export default function ServicesSection() {
                     delay: index * 0.2,
                     ease: [0.4, 0, 0.2, 1]
                   }}
+                  onHoverStart={() => setHoveredIndex(index)}
+                  onHoverEnd={() => setHoveredIndex(null)}
                 >
                   <div className="animated-line-container mb-8">
                     <div 
@@ -110,14 +114,24 @@ export default function ServicesSection() {
                   <p className="text-gray-300 leading-relaxed mb-6">
                     {service.description}
                   </p>
-                  <ul className="space-y-3">
-                    {service.benefits.map((benefit, idx) => (
-                      <li key={idx} className="text-sm text-gray-400 flex items-center gap-2">
-                        <span className="w-1.5 h-1.5 rounded-full bg-[#33CD9E]"></span>
-                        {benefit}
-                      </li>
-                    ))}
-                  </ul>
+                  <motion.div
+                    className="overflow-hidden"
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ 
+                      height: hoveredIndex === index ? "auto" : 0,
+                      opacity: hoveredIndex === index ? 1 : 0
+                    }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    <ul className="space-y-3 pt-4 border-t border-[#33CD9E]/20">
+                      {service.benefits.map((benefit, idx) => (
+                        <li key={idx} className="text-sm text-gray-400 flex items-center gap-2">
+                          <span className="w-1.5 h-1.5 rounded-full bg-[#33CD9E]"></span>
+                          {benefit}
+                        </li>
+                      ))}
+                    </ul>
+                  </motion.div>
                 </motion.div>
               </AnimatedSection>
             ))}

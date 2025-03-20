@@ -241,6 +241,7 @@
     backdrop-filter: blur(8px);
     transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
     overflow: hidden;
+    min-height: 300px;
   }
 
   .service-card::before {
@@ -259,6 +260,7 @@
     border-color: var(--accent-green);
     transform: translateY(-8px) scale(1.02);
     box-shadow: 0 8px 30px rgba(51, 205, 158, 0.1);
+    background: rgba(13, 32, 39, 0.5);
   }
 
   .service-card:hover::before {
@@ -280,6 +282,15 @@
       rgba(51, 205, 158, 0.2) 0%,
       rgba(22, 91, 70, 0.2) 100%
     );
+  }
+
+  .service-card ul {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .service-card:hover ul {
+    opacity: 1;
+    transform: translateY(0);
   }
 
   .animate-gradient {
@@ -326,6 +337,38 @@
   .service-card:hover .animated-line-container div {
     animation-duration: 1.5s;
     opacity: 1;
+  }
+
+  .team-member {
+    @apply relative overflow-hidden rounded-xl transition-all duration-500;
+  }
+
+  .team-member img {
+    @apply w-full h-full object-cover grayscale transition-all duration-500 scale-[1.01];
+  }
+
+  .team-member:hover img {
+    @apply grayscale-0 scale-[1.08];
+  }
+
+  .team-member-info {
+    @apply absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-[rgba(13,32,39,0.95)] via-[rgba(13,32,39,0.8)] to-transparent translate-y-full transition-transform duration-500;
+  }
+
+  .team-member:hover .team-member-info {
+    @apply translate-y-0;
+  }
+
+  .team-member-name {
+    @apply text-white text-xl font-semibold mb-2;
+  }
+
+  .team-member-role {
+    @apply text-[#33CD9E] text-sm font-medium opacity-0 translate-y-2 transition-all duration-300;
+  }
+
+  .team-member:hover .team-member-role {
+    @apply opacity-100 translate-y-0;
   }
 }
 
@@ -692,67 +735,6 @@ section {
     transform: translateX(100%) scaleX(0.5);
     opacity: 0;
   }
-}
-
-.team-member {
-  position: relative;
-  overflow: hidden;
-  border-radius: 1rem;
-  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.team-member img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  filter: grayscale(100%);
-  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-  transform: scale(1.01);
-}
-
-.team-member:hover img {
-  filter: grayscale(0%);
-  transform: scale(1.08);
-}
-
-.team-member-info {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding: 1.5rem;
-  background: linear-gradient(to top, 
-    rgba(13, 32, 39, 0.95) 0%,
-    rgba(13, 32, 39, 0.8) 50%,
-    transparent 100%
-  );
-  transform: translateY(100%);
-  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.team-member:hover .team-member-info {
-  transform: translateY(0);
-}
-
-.team-member-name {
-  color: white;
-  font-size: 1.25rem;
-  font-weight: 600;
-  margin-bottom: 0.5rem;
-}
-
-.team-member-role {
-  color: #33CD9E;
-  font-size: 0.875rem;
-  font-weight: 500;
-  opacity: 0;
-  transform: translateY(10px);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.team-member:hover .team-member-role {
-  opacity: 1;
-  transform: translateY(0);
 }
 
 .geometric-animation {

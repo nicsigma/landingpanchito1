@@ -16,63 +16,70 @@ export default function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 0);
+      setIsScrolled(window.scrollY > 50);
     };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  const handleBookCall = () => {
+    window.open('https://panchitoproductlab.zohobookings.com/#/customer/panchitoproductlab', '_blank');
+  };
+
+  const scrollToSection = (sectionId: string) => {
+    const section = document.getElementById(sectionId);
+    section?.scrollIntoView({ behavior: 'smooth' });
+  };
 
   return (
     <nav 
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled 
-          ? "bg-[#0D2027]/95 backdrop-blur-md shadow-lg py-4" 
-          : "bg-transparent py-6"
+          ? "bg-[#0D2027]/90 backdrop-blur-md py-4" 
+          : "py-6"
       }`}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
-          <div className="flex items-center gap-2">
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5 }}
+          >
             <img 
               src="/images/logo.svg" 
               alt="Logo" 
-              className="h-8 w-auto"
+              className="h-8"
             />
-          </div>
+          </motion.div>
 
-          <div className="hidden md:flex items-center gap-8">
-            {/* Desktop Menu */}
-            <div className="flex items-center space-x-8">
-              <a 
-                href="#services" 
-                className="text-sm font-medium text-white/80 hover:text-[#33CD9E] transition-colors duration-300"
-              >
-                {language === 'en' ? 'Services' : 'Servicios'}
-              </a>
-              <a 
-                href="#team" 
-                className="text-sm font-medium text-white/80 hover:text-[#33CD9E] transition-colors duration-300"
-              >
-                {language === 'en' ? 'Team' : 'Equipo'}
-              </a>
-              <a 
-                href="#contact" 
-                className="text-sm font-medium text-white/80 hover:text-[#33CD9E] transition-colors duration-300"
-              >
-                {language === 'en' ? 'Contact' : 'Contacto'}
-              </a>
-            </div>
-
-            <div className="flex items-center gap-4">
-              <LanguageToggle />
-              <a
-                href="#contact"
-                className="px-6 py-2.5 text-sm font-semibold rounded-md bg-[#33CD9E] text-[#0D2027] hover:bg-[#33CD9E]/90 transition-all duration-300 shadow-lg shadow-[#33CD9E]/20 hover:scale-105"
-              >
-                {language === 'en' ? 'Book a Call' : 'Agendar Llamada'}
-              </a>
-            </div>
-          </div>
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5 }}
+            className="flex items-center space-x-8"
+          >
+            <button
+              onClick={() => scrollToSection('services')}
+              className="text-white hover:text-[#33CD9E] transition-colors"
+            >
+              {language === 'en' ? 'Services' : 'Servicios'}
+            </button>
+            <button
+              onClick={() => scrollToSection('about')}
+              className="text-white hover:text-[#33CD9E] transition-colors"
+            >
+              {language === 'en' ? 'About' : 'Nosotros'}
+            </button>
+            <motion.button
+              onClick={handleBookCall}
+              className="px-6 py-2 text-white border-2 border-[#33CD9E] rounded-lg hover:bg-[#33CD9E]/10 transition-all duration-300"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              {language === 'en' ? "Book a Call" : "Agendar Llamada"}
+            </motion.button>
+          </motion.div>
 
           {/* Mobile menu button */}
           <button

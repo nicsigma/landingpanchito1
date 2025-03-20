@@ -11,11 +11,27 @@ export default function HeroSection() {
   };
 
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center gradient-section">
+    <section className="relative min-h-screen flex flex-col items-center justify-center gradient-section overflow-hidden">
+      {/* Innovative background animation */}
+      <div className="geometric-animation">
+        <div className="geometric-shape shape-1"></div>
+        <div className="geometric-shape shape-2"></div>
+        <div className="geometric-shape shape-3"></div>
+        <div className="geometric-shape shape-4"></div>
+      </div>
+
+      {/* Horizontal Lines */}
+      <div className="horizontal-lines">
+        <div className="h-line"></div>
+        <div className="h-line"></div>
+        <div className="h-line"></div>
+        <div className="h-line"></div>
+      </div>
+
       <div className="spotlight-animation">
-        <div className="spotlight"></div>
-        <div className="spotlight"></div>
-        <div className="spotlight"></div>
+        <div className="spotlight spotlight-1"></div>
+        <div className="spotlight spotlight-2"></div>
+        <div className="spotlight spotlight-3"></div>
       </div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">

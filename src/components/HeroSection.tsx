@@ -6,7 +6,7 @@ export default function HeroSection() {
   const { language } = useLanguage();
 
   const scrollToServices = () => {
-    const servicesSection = document.getElementById('services');
+    const servicesSection = document.getElementById('our-services');
     servicesSection?.scrollIntoView({ behavior: 'smooth' });
   };
 
@@ -35,30 +35,36 @@ export default function HeroSection() {
       </div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="text-center"
-        >
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
-            {language === 'en' ? 'Meet your product team' : 'Conoce a tu equipo de producto'}
-          </h1>
-          <p className="text-xl md:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto">
-            {language === 'en'
-              ? 'We help you improve, build and launch your product in less than a sprint'
-              : 'Te ayudamos a mejorar, construir y lanzar tu producto en menos de un sprint'}
-          </p>
-          <motion.button
-            onClick={scrollToServices}
-            className="inline-flex items-center justify-center gap-2 px-8 py-4 text-lg font-medium rounded-lg border-2 border-[#33CD9E] text-white hover:bg-[#33CD9E]/10 transition-all duration-300"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
+        <div className="text-center max-w-3xl mx-auto">
+          <motion.h1 
+            className="text-4xl md:text-6xl font-bold mb-6 text-white"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
           >
-            {language === 'en' ? 'Discover More' : 'Descubre Más'}
-            <ChevronDown className="w-5 h-5 animate-bounce" />
-          </motion.button>
-        </motion.div>
+            Launch new products in less than a sprint
+          </motion.h1>
+          <motion.p 
+            className="text-lg md:text-xl text-gray-400 mb-8"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
+            We validate ideas, design solutions, and execute them faster so you can grow without wasting time.
+          </motion.p>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+          >
+            <button 
+              onClick={scrollToServices}
+              className="border-2 border-[#33CD9E] hover:bg-[#33CD9E]/10 text-white text-lg px-8 py-4 rounded-lg transition-all duration-300"
+            >
+              Start your project
+            </button>
+          </motion.div>
+        </div>
       </div>
     </section>
   );

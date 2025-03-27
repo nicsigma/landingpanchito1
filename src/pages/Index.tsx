@@ -2,8 +2,8 @@ import { useEffect, useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
-import ValueProposition from "@/components/ValueProposition";
 import ServicesSection from "@/components/ServicesSection";
+import AboutSection from "@/components/AboutSection";
 import TeamSection from "@/components/TeamSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
@@ -29,7 +29,7 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="flex flex-col min-h-screen bg-[#0D2027] text-white overflow-hidden">
+    <div className="flex flex-col min-h-screen bg-[var(--dark-green)] text-white overflow-hidden">
       <Navbar />
       <motion.main 
         ref={mainRef}
@@ -60,7 +60,7 @@ const Index = () => {
             translateY: useTransform(scrollYProgress, [0, 1], [0, -20])
           }}
         >
-          <ValueProposition />
+          <AboutSection />
         </motion.div>
 
         <motion.div

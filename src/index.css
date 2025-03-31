@@ -76,7 +76,7 @@
     @apply border-[#1a1a1a];
   }
   body {
-    @apply text-white;
+    @apply text-white font-sans;
     font-feature-settings: "rlig" 1, "calt" 1;
     scroll-behavior: smooth;
     background-color: var(--dark-green);
@@ -88,10 +88,10 @@
     color: white;
   }
   h1, h2, h3, h4, h5, h6 {
-    @apply font-bold tracking-tight;
+    @apply font-grotesk;
   }
   h1 {
-    @apply text-4xl md:text-5xl lg:text-6xl;
+    @apply text-4xl md:text-5xl font-bold tracking-tight uppercase;
   }
   h2 {
     @apply text-3xl md:text-4xl;
@@ -962,4 +962,13 @@ footer {
     transform: translateY(-10px) translateX(10px);
     opacity: 0.2;
   }
+}
+
+@keyframes cursor {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.animate-cursor {
+  animation: cursor 0.7s infinite;
 }

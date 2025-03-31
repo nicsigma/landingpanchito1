@@ -80,11 +80,9 @@ export default function Navbar() {
             ))}
             <motion.button
               onClick={handleBookCall}
-              className="px-6 py-2 text-white border-2 border-[#33CD9E] rounded-lg hover:bg-[#33CD9E]/10 transition-all duration-300"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+              className="border-2 border-[#00FF00] hover:bg-[#00FF00] text-white text-base px-4 py-2 rounded-full transition-all duration-300 font-semibold"
             >
-              {language === 'en' ? "Book a Call" : "Agendar Llamada"}
+              {language === 'en' ? "Start your Project" : "Inicia tu Proyecto"}
             </motion.button>
           </motion.div>
 
@@ -92,11 +90,9 @@ export default function Navbar() {
           <div className="md:hidden flex items-center space-x-4">
             <motion.button
               onClick={handleBookCall}
-              className="px-4 py-1.5 text-sm text-white border-2 border-[#33CD9E] rounded-lg hover:bg-[#33CD9E]/10 transition-all duration-300"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+              className="border-2 border-[#00FF00] hover:bg-[#00FF00] text-white text-sm px-3 py-1.5 rounded-full transition-all duration-300 font-semibold"
             >
-              {language === 'en' ? "Book" : "Agendar"}
+              {language === 'en' ? "Start Project" : "Iniciar"}
             </motion.button>
             <button
               onClick={toggleMenu}

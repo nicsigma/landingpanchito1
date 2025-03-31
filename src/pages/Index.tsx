@@ -3,10 +3,10 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import ServicesSection from "@/components/ServicesSection";
-import AboutSection from "@/components/AboutSection";
-import TeamSection from "@/components/TeamSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
+import UseCasesSection from "@/components/UseCasesSection";
+import { useLanguage } from "@/context/LanguageContext";
 
 const Index = () => {
   const mainRef = useRef(null);
@@ -14,6 +14,7 @@ const Index = () => {
     target: mainRef,
     offset: ["start start", "end end"]
   });
+  const { language } = useLanguage();
 
   // Smooth scroll to section on page load if URL has a hash
   useEffect(() => {
@@ -52,15 +53,7 @@ const Index = () => {
             translateY: useTransform(scrollYProgress, [0, 1], [0, -30])
           }}
         >
-          <ServicesSection />
-        </motion.div>
-
-        <motion.div
-          style={{
-            translateY: useTransform(scrollYProgress, [0, 1], [0, -20])
-          }}
-        >
-          <AboutSection />
+          <ServicesSection language={language} />
         </motion.div>
 
         <motion.div
@@ -68,7 +61,7 @@ const Index = () => {
             translateY: useTransform(scrollYProgress, [0, 1], [0, -10])
           }}
         >
-          <TeamSection />
+          <UseCasesSection language={language} />
         </motion.div>
 
         <motion.div>

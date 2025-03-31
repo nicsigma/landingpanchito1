@@ -1,28 +1,38 @@
 import { motion } from "framer-motion";
 import { useLanguage } from "@/context/LanguageContext";
-import ContactForm from "./ContactForm";
+import AnimatedSection from "./AnimatedSection";
 
 export default function ContactSection() {
   const { language } = useLanguage();
 
   return (
-    <section id="contact" className="relative py-20 overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#0D2027]/50"></div>
-      
-      {/* Background Animation */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="geometric-animation opacity-20">
-          <div className="geometric-shape shape-1"></div>
-          <div className="geometric-shape shape-2"></div>
-          <div className="geometric-shape shape-3"></div>
-          <div className="geometric-shape shape-4"></div>
+    <AnimatedSection id="contact" className="py-24">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center">
+          <h2 className="text-3xl md:text-4xl font-bold mb-8 uppercase">
+            {language === 'en' 
+              ? "Interested in starting your next project?" 
+              : "¿Interesado en comenzar tu próximo proyecto?"}
+          </h2>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
+            <a
+              href="https://calendly.com/panchito-tech/30min"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block bg-[#00FF00] hover:bg-white text-black text-lg px-8 py-4 rounded-full transition-all duration-300 font-semibold"
+            >
+              {language === 'en' ? "Book a Demo" : "Reservar Demo"}
+            </a>
+          </motion.div>
         </div>
       </div>
-
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <ContactForm />
-      </div>
-    </section>
+    </AnimatedSection>
   );
 }
+
 

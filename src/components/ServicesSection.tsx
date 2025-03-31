@@ -117,7 +117,9 @@ export function ServicesSection({ language }: ServicesSectionProps) {
 
         <div className="mt-16 text-center">
           <a 
-            href="#contact" 
+            href="https://panchitoproductlab.zohobookings.com/#/panchitoproductlab"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-block border-2 border-[#00FF00] hover:bg-[#00FF00] text-white text-base px-6 py-3 rounded-full transition-all duration-300 font-semibold"
           >
             {language === 'en' ? "Start your project" : "Inicia tu proyecto"}

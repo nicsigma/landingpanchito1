@@ -89,12 +89,14 @@ export default function Navbar() {
 
           {/* Mobile menu button */}
           <div className="md:hidden flex items-center space-x-4">
-            <motion.button
-              onClick={handleBookCall}
+            <a
+              href="https://panchitoproductlab.zohobookings.com/#/panchitoproductlab"
+              target="_blank"
+              rel="noopener noreferrer"
               className="border-2 border-[#00FF00] hover:bg-[#00FF00] text-white text-sm px-3 py-1.5 rounded-full transition-all duration-300 font-semibold"
             >
               {language === 'en' ? "Start Project" : "Iniciar"}
-            </motion.button>
+            </a>
             <button
               onClick={toggleMenu}
               className="p-2 text-white hover:text-[#00FF00] transition-colors"

@@ -102,12 +102,14 @@ export default function HeroSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.4 }}
           >
-            <button 
-              onClick={scrollToServices}
-              className="bg-[#00FF00] hover:bg-white text-black text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 rounded-full transition-all duration-300 font-semibold"
+            <a 
+              href="https://panchitoproductlab.zohobookings.com/#/panchitoproductlab"
+              target="_blank"
+              rel="noopener noreferrer" 
+              className="border-2 border-[#00FF00] hover:bg-[#00FF00] text-white text-base px-6 py-3 rounded-full transition-all duration-300 font-semibold"
             >
-              Start your project
-            </button>
+              {language === 'en' ? "Start your project" : "Inicia tu proyecto"}
+            </a>
           </motion.div>
         </div>
       </div>

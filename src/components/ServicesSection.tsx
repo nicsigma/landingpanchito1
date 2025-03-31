@@ -73,13 +73,10 @@ export function ServicesSection({ language }: ServicesSectionProps) {
   return (
     <AnimatedSection id="our-services" className="py-24">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 uppercase">Our Services</h2>
-          <p className="text-lg text-white/80 max-w-2xl mx-auto">
-            {language === 'en' 
-              ? "We offer comprehensive solutions to help your business thrive in the digital age"
-              : "Ofrecemos soluciones integrales para ayudar a tu negocio a prosperar en la era digital"}
-          </p>
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-grotesk font-bold text-white uppercase">
+            {language === 'en' ? 'Our Services' : 'Nuestros Servicios'}
+          </h2>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -116,6 +113,15 @@ export function ServicesSection({ language }: ServicesSectionProps) {
               </motion.div>
             </motion.div>
           ))}
+        </div>
+
+        <div className="mt-16 text-center">
+          <a 
+            href="#contact" 
+            className="inline-block border-2 border-[#00FF00] hover:bg-[#00FF00] text-white text-base px-6 py-3 rounded-full transition-all duration-300 font-semibold"
+          >
+            {language === 'en' ? "Start your project" : "Inicia tu proyecto"}
+          </a>
         </div>
       </div>
     </AnimatedSection>

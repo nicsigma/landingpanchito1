@@ -33,10 +33,9 @@ export default function Navbar() {
     }
   };
 
-  const navItems = [
-    { id: 'our-services', labelEn: 'Services', labelEs: 'Servicios' },
-    { id: 'team', labelEn: 'Team', labelEs: 'Equipo' },
-    { id: 'contact', labelEn: 'Contact', labelEs: 'Contacto' }
+  const navigation = [
+    { name: { en: 'Services', es: 'Servicios' }, href: '#services' },
+    { name: { en: 'Contact', es: 'Contacto' }, href: '#contact' }
   ];
 
   return (
@@ -69,15 +68,17 @@ export default function Navbar() {
             transition={{ duration: 0.5 }}
             className="hidden md:flex items-center space-x-8"
           >
-            {navItems.map((item) => (
-              <button
-                key={item.id}
-                onClick={() => scrollToSection(item.id)}
-                className="text-white hover:text-[#33CD9E] transition-colors"
-              >
-                {language === 'en' ? item.labelEn : item.labelEs}
-              </button>
-            ))}
+            <nav className="hidden md:flex space-x-10">
+              {navigation.map((item) => (
+                <a
+                  key={item.href}
+                  href={item.href}
+                  className="text-white/80 hover:text-[#00FF00] transition-colors duration-300"
+                >
+                  {language === 'en' ? item.name.en : item.name.es}
+                </a>
+              ))}
+            </nav>
             <motion.button
               onClick={handleBookCall}
               className="border-2 border-[#00FF00] hover:bg-[#00FF00] text-white text-base px-4 py-2 rounded-full transition-all duration-300 font-semibold"
@@ -96,7 +97,7 @@ export default function Navbar() {
             </motion.button>
             <button
               onClick={toggleMenu}
-              className="p-2 text-white hover:text-[#33CD9E] transition-colors"
+              className="p-2 text-white hover:text-[#00FF00] transition-colors"
             >
               {isOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -114,15 +115,17 @@ export default function Navbar() {
             className="md:hidden bg-[var(--dark-green)]/95 backdrop-blur-md border-t border-white/10"
           >
             <div className="container mx-auto px-4 pt-4 pb-6 space-y-4">
-              {navItems.map((item) => (
-                <button
-                  key={item.id}
-                  onClick={() => scrollToSection(item.id)}
-                  className="block w-full text-left px-3 py-2 text-base font-medium text-white/90 hover:text-[#33CD9E] transition-colors"
-                >
-                  {language === 'en' ? item.labelEn : item.labelEs}
-                </button>
-              ))}
+              <div className="space-y-1 px-2 pb-3 pt-2">
+                {navigation.map((item) => (
+                  <a
+                    key={item.href}
+                    href={item.href}
+                    className="text-white/80 hover:text-[#00FF00] block rounded-md px-3 py-2 text-base font-medium transition-colors duration-300"
+                  >
+                    {language === 'en' ? item.name.en : item.name.es}
+                  </a>
+                ))}
+              </div>
             </div>
           </motion.div>
         )}

@@ -60,22 +60,29 @@ export function UseCasesSection({ language }: UseCasesSectionProps) {
             transition={{ duration: 0.5 }}
             className="relative"
           >
-            <div className="aspect-video rounded-2xl overflow-hidden border border-white/10 hover:border-[#00FF00] transition-all duration-300 bg-black/20 backdrop-blur-sm">
-              <div className="relative w-full h-full">
-                <img 
-                  src="/images/from021-hero.png" 
-                  alt="from021.io Feature Prioritization Interface" 
-                  className="w-full h-full object-contain p-4"
-                  onError={(e) => {
-                    const target = e.target as HTMLImageElement;
-                    target.style.display = 'none';
-                  }}
-                />
-                <div className="absolute inset-0 flex items-center justify-center text-white/50 text-sm">
-                  Feature Prioritization Interface
+            <a 
+              href="https://from021.io" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="block"
+            >
+              <div className="aspect-video rounded-2xl overflow-hidden border border-white/10 hover:border-[#00FF00] transition-all duration-300 bg-black/20 backdrop-blur-sm">
+                <div className="relative w-full h-full">
+                  <img 
+                    src="/images/from021-hero.png" 
+                    alt="from021.io Feature Prioritization Interface" 
+                    className="w-full h-full object-contain p-4"
+                    onError={(e) => {
+                      const target = e.target as HTMLImageElement;
+                      target.style.display = 'none';
+                    }}
+                  />
+                  <div className="absolute inset-0 flex items-center justify-center text-white/50 text-sm">
+                    Feature Prioritization Interface
+                  </div>
                 </div>
               </div>
-            </div>
+            </a>
           </motion.div>
         </div>
       </div>

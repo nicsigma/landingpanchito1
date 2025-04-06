@@ -53,12 +53,14 @@ export default function Navbar() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <img 
-              src="/images/logo.svg" 
-              alt="Logo" 
-              className="h-8 cursor-pointer"
-              onClick={() => scrollToSection('hero')}
-            />
+            <div className="flex items-center gap-2">
+              <img 
+                src="/images/logo-icon.jpeg" 
+                alt="Panchito Logo" 
+                className="h-[50px] w-[50px] object-contain"
+                style={{ filter: 'brightness(1.1)' }}
+              />
+            </div>
           </motion.div>
 
           {/* Desktop Navigation */}
